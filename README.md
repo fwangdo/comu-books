@@ -18,7 +18,6 @@
 - **상태 관리**: React Query (TanStack Query)
 - **라우팅**: React Router DOM
 - **개발 도구**: ESLint, Prettier
-- **배포**: Vercel 또는 Netlify
 
 ## 🏗️ 프로젝트 구조
 
