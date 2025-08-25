@@ -11,8 +11,9 @@ function Frame( { children }: IReactProp ) {
 } 
 
 function Main() {
-  return (<Frame>
-    {null} 
+  return (
+  <Frame>
+
   </Frame>)
 }
 
