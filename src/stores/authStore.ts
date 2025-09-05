@@ -9,7 +9,7 @@ interface AuthState {
 interface AuthAction {
     login: (userId: string) => void;
     logout: () => void;
-    setisLogin: (isLogin: boolean) => void;
+    setIsLogin: (isLogin: boolean) => void;
     setUserId: (userId: string) => void; 
 }
 
