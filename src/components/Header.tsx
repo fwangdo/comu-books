@@ -63,8 +63,8 @@ function Header() {
 
     return (
         // content -> padding -> border -> margin. 
-        <div className={`flex w-full h-[5vh] m-0 p-0 justify-between items-center bg-[${greyColor}] px-[15vw]`}>
-            <ul className={`flex gap-x-[30px]`}>
+        <div className={`flex w-full h-[5vh] m-0 p-0 justify-between items-center bg-[#888888] px-[15vw]`}>
+            <ul className={`flex gap-x-[30px] list-none`}>
                 <Item><LinkWrapper to="/">{homeMatch ? <BoldWrapper>Home</BoldWrapper> : "Home"}</LinkWrapper></Item>
                 <Item><LinkWrapper to="/Market">{marketMatch ? <BoldWrapper>Market</BoldWrapper> : "Market"}</LinkWrapper></Item>
                 <Item><LinkWrapper to="/Mine">{mineMatch ? <BoldWrapper>Mine</BoldWrapper> : "Mine"}</LinkWrapper></Item>
@@ -72,7 +72,7 @@ function Header() {
                 <Item><LinkWrapper to="/Community">{comuMatch ? <BoldWrapper>Community</BoldWrapper> : "Community"}</LinkWrapper></Item>
             </ul>
 
-            <ul className='flex'>
+            <ul className='flex list-none'>
                 { isLogin ? (
                     <Item onClick={execLogout}><LinkWrapper to="/">Logout</LinkWrapper></Item>
                 ) : (
