@@ -6,7 +6,7 @@ import './index.css'
 
 function Frame( { children }: IReactProp ) {
   return (
-    <div>
+    <div className="w-full">
       {children}
     </div>
   )
