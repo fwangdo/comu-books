@@ -1,9 +1,8 @@
 import { Link, useMatch, useLocation } from 'react-router-dom'; 
 import { useAuthStore } from '../stores/authStore';
 import { greyColor, theme } from './Colors';
-import type { Bold } from 'lucide-react';
 
-interface IItem {
+interface IItem extends React.LiHTMLAttributes<HTMLElement> {
     color?: string; 
     children: React.ReactNode; 
 }
@@ -58,6 +57,10 @@ function Header() {
     
     const { isLogin, setIsLogin } = useAuthStore(); 
 
+    const execLogout = () => {
+        setIsLogin(false); 
+    }
+
     return (
         // content -> padding -> border -> margin. 
         <div className={`flex w-full h-[5vh] m-0 p-0 justify-between items-center bg-[${greyColor}] px-[15vw]`}>
@@ -67,6 +70,15 @@ function Header() {
                 <Item><LinkWrapper to="/Mine">{mineMatch ? <BoldWrapper>Mine</BoldWrapper> : "Mine"}</LinkWrapper></Item>
                 <Item><LinkWrapper to="/Review">{reviewsMatch ? <BoldWrapper>Review</BoldWrapper> : "Review"}</LinkWrapper></Item>
                 <Item><LinkWrapper to="/Community">{comuMatch ? <BoldWrapper>Community</BoldWrapper> : "Community"}</LinkWrapper></Item>
+            </ul>
+
+            <ul className='flex'>
+                { isLogin ? (
+                    <Item onClick={execLogout}><LinkWrapper to="/">Logout</LinkWrapper></Item>
+                ) : (
+                    <Item><LinkWrapper to="/Login">{loginMatch ? <BoldWrapper>Login</BoldWrapper> : "Login"}</LinkWrapper></Item>
+                )}
+                <Item><LinkWrapper to="/Sign">{signMatch ? <BoldWrapper>Sign</BoldWrapper> : "Sign" }</LinkWrapper></Item>
             </ul>
         </div>
     )
